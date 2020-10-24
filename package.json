@@ -1,0 +1,18 @@
+{
+  "name": "chrm-service",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "preinstall": "node preinstall.js",
+    "start": "node src/server.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@google-cloud/storage": "^5.2.0",
+    "@hapi/hapi": "^20.0.0",
+    "@hapi/inert": "^6.0.2"
+  }
+}

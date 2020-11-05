@@ -1,18 +1,37 @@
 {
   "name": "chrm-service",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "preinstall": "node preinstall.js",
-    "start": "node src/server.js"
+    "start": "node src/server.js",
+    "precommit": "lint-staged"
   },
-  "author": "",
-  "license": "ISC",
+  "lint-staged": {
+    "*.{js,json,md}": [
+      "prettier --write"
+    ],
+    "*.{js}": [
+      "eslint --fix"
+    ]
+  },
+  "prettier": {
+    "trailingComma": "all",
+    "singleQuote": true
+  },
   "dependencies": {
     "@google-cloud/storage": "^5.2.0",
     "@hapi/hapi": "^20.0.0",
-    "@hapi/inert": "^6.0.2"
+    "@hapi/inert": "^6.0.2",
+    "mongodb": "^3.6.2"
+  },
+  "devDependencies": {
+    "eslint": "^7.12.0",
+    "eslint-config-airbnb": "^18.2.0",
+    "eslint-config-airbnb-base": "^14.2.0",
+    "eslint-config-prettier": "^6.14.0",
+    "lint-staged": "^10.4.2",
+    "prettier": "^2.1.2"
   }
 }
